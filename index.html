@@ -41,17 +41,6 @@
             getBounds: function () {
                 return this._bounds;
             }
-        });
- 	var title = new L.Control();
-		title.onAdd = function (map) {
-			this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
-			this.update();
-			return this._div;
-		};
-		title.update = function () {
-			this._div.innerHTML = '<h2>Canterbury Consent Activities</h2>Consent activities in Canterbury region which affect the environment'
-		};
-		title.addTo(map);
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
         })
