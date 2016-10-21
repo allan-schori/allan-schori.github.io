@@ -41,6 +41,7 @@
             getBounds: function () {
                 return this._bounds;
             }
+        });
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
         })
@@ -72,7 +73,6 @@
             var popupContent = '<table><tr><td colspan="2"><strong>Store name</strong><br />' + (feature.properties['Store name'] !== null ? Autolinker.link(String(feature.properties['Store name'])) : '') + '</td></tr><tr><th scope="row">Chain</th><td>' + (feature.properties['Chain'] !== null ? Autolinker.link(String(feature.properties['Chain'])) : '') + '</td></tr><tr><th scope="row">Address</th><td>' + (feature.properties['Address'] !== null ? Autolinker.link(String(feature.properties['Address'])) : '') + '</td></tr><tr><th scope="row">Phone</th><td>' + (feature.properties['Phone'] !== null ? Autolinker.link(String(feature.properties['Phone'])) : '') + '</td></tr></table>';
             layer.bindPopup(popupContent);
         }
-
         map.createPane('pane_Fertilisersupplies0');
         map.getPane('pane_Fertilisersupplies0').style.zIndex = 601;
         function doStyleFertilisersupplies0() {
@@ -99,14 +99,12 @@
             });
         var cluster_groupFertilisersupplies0JSON = new L.MarkerClusterGroup({showCoverageOnHover: false});
         cluster_groupFertilisersupplies0JSON.addLayer(json_Fertilisersupplies0JSON);
-
         bounds_group.addLayer(json_Fertilisersupplies0JSON);
         cluster_groupFertilisersupplies0JSON.addTo(map);
         function pop_Engineeringandrepairservices1(feature, layer) {
             var popupContent = '<table><tr><td colspan="2"><strong>Store name</strong><br />' + (feature.properties['Store name'] !== null ? Autolinker.link(String(feature.properties['Store name'])) : '') + '</td></tr><tr><th scope="row">Chain</th><td>' + (feature.properties['Chain'] !== null ? Autolinker.link(String(feature.properties['Chain'])) : '') + '</td></tr><tr><th scope="row">Address</th><td>' + (feature.properties['Address'] !== null ? Autolinker.link(String(feature.properties['Address'])) : '') + '</td></tr><tr><td colspan="2"><strong>Phone</strong><br />' + (feature.properties['Phone'] !== null ? Autolinker.link(String(feature.properties['Phone'])) : '') + '</td></tr></table>';
             layer.bindPopup(popupContent);
         }
-
         map.createPane('pane_Engineeringandrepairservices1');
         map.getPane('pane_Engineeringandrepairservices1').style.zIndex = 602;
         function doStyleEngineeringandrepairservices1() {
@@ -133,14 +131,12 @@
             });
         var cluster_groupEngineeringandrepairservices1JSON = new L.MarkerClusterGroup({showCoverageOnHover: false});
         cluster_groupEngineeringandrepairservices1JSON.addLayer(json_Engineeringandrepairservices1JSON);
-
         bounds_group.addLayer(json_Engineeringandrepairservices1JSON);
         cluster_groupEngineeringandrepairservices1JSON.addTo(map);
         function pop_Generalsupplies2(feature, layer) {
             var popupContent = '<table><tr><td colspan="2"><strong>Store name</strong><br />' + (feature.properties['Store name'] !== null ? Autolinker.link(String(feature.properties['Store name'])) : '') + '</td></tr><tr><th scope="row">Chain</th><td>' + (feature.properties['Chain'] !== null ? Autolinker.link(String(feature.properties['Chain'])) : '') + '</td></tr><tr><th scope="row">Address</th><td>' + (feature.properties['Address'] !== null ? Autolinker.link(String(feature.properties['Address'])) : '') + '</td></tr><tr><th scope="row">Phone</th><td>' + (feature.properties['Phone'] !== null ? Autolinker.link(String(feature.properties['Phone'])) : '') + '</td></tr></table>';
             layer.bindPopup(popupContent);
         }
-
         map.createPane('pane_Generalsupplies2');
         map.getPane('pane_Generalsupplies2').style.zIndex = 603;
         function doStyleGeneralsupplies2() {
@@ -167,7 +163,6 @@
             });
         var cluster_groupGeneralsupplies2JSON = new L.MarkerClusterGroup({showCoverageOnHover: false});
         cluster_groupGeneralsupplies2JSON.addLayer(json_Generalsupplies2JSON);
-
         bounds_group.addLayer(json_Generalsupplies2JSON);
         cluster_groupGeneralsupplies2JSON.addTo(map);
         raster_group.addTo(map);
@@ -181,7 +176,11 @@
         var baseMaps = {'OSM': basemap0};
         L.control.layers(baseMaps,{'<img src="legend/Generalsupplies2.png" /> General supplies': cluster_groupGeneralsupplies2JSON,'<img src="legend/Engineeringandrepairservices1.png" /> Engineering and repair services': cluster_groupEngineeringandrepairservices1JSON,'<img src="legend/Fertilisersupplies0.png" /> Fertiliser supplies': cluster_groupFertilisersupplies0JSON,},{collapsed:false}).addTo(map);
         setBounds();
-
+            };
+		title.update = function () {
+			this._div.innerHTML = '<h2>Canterbury Consent Activities</h2>Consent activities in Canterbury region which affect the environment'
+		};
+		title.addTo(map);
         </script>
     </body>
 </html>
