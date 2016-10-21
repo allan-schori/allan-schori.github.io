@@ -182,6 +182,11 @@
         var baseMaps = {'OSM': basemap0};
         L.control.layers(baseMaps,{'<img src="legend/Generalsupplies2.png" /> General supplies': cluster_groupGeneralsupplies2JSON,'<img src="legend/Engineeringandrepairservices1.png" /> Engineering and repair services': cluster_groupEngineeringandrepairservices1JSON,'<img src="legend/Fertilisersupplies0.png" /> Fertiliser supplies': cluster_groupFertilisersupplies0JSON,},{collapsed:false}).addTo(map);
         setBounds();
+            };
+		title.update = function () {
+			this._div.innerHTML = '<h2>Canterbury Consent Activities</h2>Consent activities in Canterbury region which affect the environment'
+		};
+		title.addTo(map);
         </script>
     </body>
 </html>
